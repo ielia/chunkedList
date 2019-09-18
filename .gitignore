@@ -1,3 +1,51 @@
+# Attached PIDs
+.attach_pid*
+
+# Idea
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/
+
+# NetBeans
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Stuff
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# Tern plugin
+.tern-project
+
+# TeXlipse plugin
+.texlipse
+
+# Maven Target
+target/
+
 # Compiled class file
 *.class
 
