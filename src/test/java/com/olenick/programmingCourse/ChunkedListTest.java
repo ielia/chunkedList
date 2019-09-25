@@ -20,7 +20,6 @@ class ChunkedListTest {
         new ChunkedList<Integer>();
     }
 
-    @Disabled
     @Test
     void testChunkedListChunkSizeFailsOnZero() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -28,7 +27,6 @@ class ChunkedListTest {
         });
     }
 
-    @Disabled
     @Test
     void testChunkedListChunkSizeFailsOnNegative() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -41,7 +39,6 @@ class ChunkedListTest {
         new ChunkedList<Integer>(128);
     }
 
-    @Disabled
     @Test
     void testChunkedListFinalChunkMaxOccupancyFailsOnNegative() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -49,7 +46,6 @@ class ChunkedListTest {
         });
     }
 
-    @Disabled
     @Test
     void testChunkedListFinalChunkMaxOccupancyFailsOnGreaterThanOne() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -67,13 +63,11 @@ class ChunkedListTest {
         new ChunkedList<Integer>(1.0);
     }
 
-    @Disabled
     @Test
     void testRecentlyCreatedChunkedListIsEmpty() {
         assertTrue(new ChunkedList<Integer>().isEmpty());
     }
 
-    @Disabled
     @Test
     void testChunkedListCanReceiveElements() {
         ChunkedList<Integer> chunkedList = new ChunkedList<>();
@@ -81,7 +75,6 @@ class ChunkedListTest {
         assertTrue(chunkedList.contains(1));
     }
 
-    @Disabled
     @Test
     void testChunkedListWithElementsReturnsCorrectSize() {
         ChunkedList<Integer> chunkedList = new ChunkedList<>(4, 0.5);
@@ -96,7 +89,6 @@ class ChunkedListTest {
         assertEquals(8, chunkedList.size());
     }
 
-    @Disabled
     @Test
     void testChunkedListCanReceiveCollection() {
         ChunkedList<Integer> chunkedList = new ChunkedList<>(4, 0.5);
@@ -104,7 +96,6 @@ class ChunkedListTest {
         assertEquals(8, chunkedList.size());
     }
 
-    @Disabled
     @Test
     void testChunkedListContainsInitialElements() {
         ChunkedList<Integer> chunkedList = new ChunkedList<>(Arrays.asList(0, 2));
@@ -114,7 +105,6 @@ class ChunkedListTest {
         assertFalse(chunkedList.contains(3));
     }
 
-    @Disabled
     @Test
     void testChunkedListContainsOnlyAddedElements() {
         ChunkedList<Integer> chunkedList = new ChunkedList<>(4, 0.5);
@@ -126,7 +116,6 @@ class ChunkedListTest {
         assertFalse(chunkedList.contains(3));
     }
 
-    @Disabled
     @Test
     void testChunkedListContainsAllAddedElements() {
         ChunkedList<Integer> chunkedList = new ChunkedList<>(4, 0.5);
@@ -137,7 +126,6 @@ class ChunkedListTest {
         assertFalse(chunkedList.contains(3));
     }
 
-    @Disabled
     @Test
     void testCanInsertElementsIntoChunkedList() {
         List<Integer> collection = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -151,7 +139,6 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testCanInsertAnElementIntoChunkedList() {
         List<Integer> collection = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
@@ -165,7 +152,6 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testChunkedListCanBeIterated() {
         ChunkedList<String> chunkedList = new ChunkedList<>(4, 0.5);
@@ -180,7 +166,6 @@ class ChunkedListTest {
         assertFalse(iterator.hasNext());
     }
 
-    @Disabled
     @Test
     void testChunkedListCanBeConvertedToArrayOfObjects() {
         ChunkedList<String> chunkedList = new ChunkedList<>(4, 0.5);
@@ -194,7 +179,6 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testChunkedListCanBeConvertedToArrayOfType() {
         ChunkedList<String> chunkedList = new ChunkedList<>(4, 0.5);
@@ -208,7 +192,6 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testChunkedListCanBeConvertedToSameArrayOfType() {
         ChunkedList<String> chunkedList = new ChunkedList<>(4, 0.5);
@@ -227,7 +210,6 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testElementCanBeRemovedFromChunkedList() {
         ChunkedList<String> chunkedList = new ChunkedList<>(Arrays.asList("a", "b"));
@@ -244,7 +226,6 @@ class ChunkedListTest {
         assertFalse(chunkedList.remove("a"));
     }
 
-    @Disabled
     @Test
     void testRemovingElementMultipleTimesFromChunkedList() {
         ChunkedList<String> chunkedList = new ChunkedList<>(Arrays.asList("a", "b"));
@@ -256,7 +237,6 @@ class ChunkedListTest {
         assertTrue(chunkedList.contains("b"));
     }
 
-    @Disabled
     @Test
     void testElementAtIndexCanBeRemovedFromChunkedList() {
         ChunkedList<String> chunkedList = new ChunkedList<>(Arrays.asList("a", "b"));
@@ -266,7 +246,6 @@ class ChunkedListTest {
         assertTrue(chunkedList.contains("a"));
     }
 
-    @Disabled
     @Test
     void testChunkedListContainsAllItsElements() {
         List<String> collection = Arrays.asList("a", "b", "c", "d", "e");
@@ -282,7 +261,6 @@ class ChunkedListTest {
         assertFalse(chunkedList.containsAll(Arrays.asList("a", "c", "f")));
     }
 
-    @Disabled
     @Test
     void testMultipleElementsCanBeRemovedFromChunkedList() {
         List<String> collection = Arrays.asList("a", "b", "c", "d", "e");
@@ -295,7 +273,6 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testMixedElementsReturnTrueWhenRemovedAllFromChunkedList() {
         List<String> collection = Arrays.asList("a", "b", "c", "d", "e");
@@ -317,7 +294,6 @@ class ChunkedListTest {
         assertFalse(chunkedList.removeAll(collectionToRemove));
     }
 
-    @Disabled
     @Test
     void testElementsAreRetainedInChunkedList() {
         List<String> collection = Arrays.asList("a", "b", "c", "d", "e");
@@ -329,7 +305,6 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testMultipleEqualElementsAreRetainedInChunkedList() {
         List<String> collection = Arrays.asList("a", "a", "b", "c", "a", "d");
@@ -344,7 +319,6 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testRetainingAllElementsResultInFalse() {
         List<String> collection = Arrays.asList("a", "a", "b", "c", "a", "d");
@@ -359,7 +333,6 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testClearingChunkedList() {
         List<String> collection = Arrays.asList("a", "a", "b", "c", "a", "d");
@@ -368,7 +341,6 @@ class ChunkedListTest {
         assertTrue(chunkedList.isEmpty());
     }
 
-    @Disabled
     @Test
     void testGettingWithNegativeIndexFromChunkedListThrowsException() {
         List<String> collection = Arrays.asList("a", "b", "c", "d", "e");
@@ -378,7 +350,6 @@ class ChunkedListTest {
         });
     }
 
-    @Disabled
     @Test
     void testGettingWithIndexTooHighFromChunkedListThrowsException() {
         List<String> collection = Arrays.asList("a", "b", "c", "d", "e");
@@ -388,7 +359,6 @@ class ChunkedListTest {
         });
     }
 
-    @Disabled
     @Test
     void testElementsCanBeGotFromChunkedList() {
         List<String> collection = Arrays.asList("a", "b", "c", "d", "e");
@@ -399,7 +369,6 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testSettingWithNegativeIndexIntoChunkedListThrowsException() {
         List<String> collection = Arrays.asList("a", "b", "c", "d", "e");
@@ -409,7 +378,6 @@ class ChunkedListTest {
         });
     }
 
-    @Disabled
     @Test
     void testSettingWithIndexTooHighIntoChunkedListThrowsException() {
         List<String> collection = Arrays.asList("a", "b", "c", "d", "e");
@@ -419,7 +387,6 @@ class ChunkedListTest {
         });
     }
 
-    @Disabled
     @Test
     void testElementsCanBeSetIntoChunkedList() {
         List<String> collection = Arrays.asList("a", "b", "c", "d", "e");
@@ -435,42 +402,36 @@ class ChunkedListTest {
         }
     }
 
-    @Disabled
     @Test
     void testIndexOfOnAnEmptyChunkedListReturnsMinusOne() {
         ChunkedList<String> chunkedList = new ChunkedList<>();
         assertEquals(-1, chunkedList.indexOf(""));
     }
 
-    @Disabled
     @Test
     void testIndexOfOnAnElementNotInChunkedListReturnsMinusOne() {
         ChunkedList<String> chunkedList = new ChunkedList<>(Arrays.asList("a", "b", "c"));
         assertEquals(-1, chunkedList.indexOf("d"));
     }
 
-    @Disabled
     @Test
     void testIndexOfOnAnElementInChunkedListReturnsItsFirstOccurrence() {
         ChunkedList<String> chunkedList = new ChunkedList<>(Arrays.asList("a", "b", "c", "b", "d"));
         assertEquals(1, chunkedList.indexOf("b"));
     }
 
-    @Disabled
     @Test
     void testLastIndexOfOnAnEmptyChunkedListReturnsMinusOne() {
         ChunkedList<String> chunkedList = new ChunkedList<>();
         assertEquals(-1, chunkedList.lastIndexOf(""));
     }
 
-    @Disabled
     @Test
     void testLastIndexOfOnAnElementNotInChunkedListReturnsMinusOne() {
         ChunkedList<String> chunkedList = new ChunkedList<>(Arrays.asList("a", "b", "c"));
         assertEquals(-1, chunkedList.lastIndexOf("d"));
     }
 
-    @Disabled
     @Test
     void testLastIndexOfOnAnElementInChunkedListReturnsItsLastOccurrence() {
         ChunkedList<String> chunkedList = new ChunkedList<>(Arrays.asList("a", "b", "c", "b", "d"));
